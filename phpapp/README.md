@@ -1,14 +1,14 @@
-#Apache-PHP Docker APP
+# Apache-PHP Docker APP
 
 Sample Docker project for creating an Apache-PHP server image with customized extensions
 
-##Features
+## Features
 - Dockerfile for creating customized a apache-php server image
 - docker-compose.yml for launching the webserver and a mariadb database image
 - php.ini file for enabling php errors in docker logs console
 - Sample php app for local development
 
-##Usage
+## Usage
 Exec from command line
 
 ```bash

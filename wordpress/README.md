@@ -1,12 +1,12 @@
-#Testing a Wordpress installation with docker
+# Testing a Wordpress installation with docker
 
 Sample Docker project for testing a local Wordpress installation 
 
-##Features
+## Features
 - docker-compose.yml for launching the webserver and a mariadb database services
 - Additional phpmyadmin server to manage the database 
 
-##Usage
+## Usage
 
 Exec from command line
 
@@ -24,7 +24,8 @@ $ docker-compose up -d
 $ docker-compose stop
 ```
 
-###More information
+### More information
+
 * [Official php docker image](https://hub.docker.com/_/php)
 * [Official mariadb docker image](https://hub.docker.com/_/mariadb)
 * [Official phpmyadmin docker image](https://hub.docker.com/r/phpmyadmin/phpmyadmin)
