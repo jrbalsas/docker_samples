@@ -1,0 +1,30 @@
+version: '2'
+services:
+    webserver:
+        #Build image from local Dockefile if not created
+        build: .
+        image: phpserver:v1
+
+        volumes:
+            - ./php.ini:/usr/local/etc/php/php.ini
+            - ./src:/var/www/html
+
+        #Pass important info using environment variables
+        environment:
+            - MYSQL_DATABASE=myDB
+            - MYSQL_USER=mywebapp
+            - MYSQL_PASSWORD=myappsecret
+        ports:
+            - 80:80
+    mariadb:
+        image: mariadb:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+            #Create database for application with user and pass
+            - MYSQL_DATABASE=myDB
+            - MYSQL_USER=mywebapp
+            - MYSQL_PASSWORD=myappsecret
+        ports:
+            #Not needed for accessing from app, but openned for accessing from user host too
+            - 3306:3306
+              

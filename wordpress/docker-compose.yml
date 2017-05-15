@@ -1,0 +1,23 @@
+version: '2'
+services:
+    web:
+        image: wordpress:latest  #comment
+        ports:
+            - 80:80
+        environment:
+            - WORDPRESS_DB_HOST=mariadb
+            - WORDPRESS_DB_PASSWORD=secret
+    mariadb:
+        image: mariadb:10.1
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+        ports:
+            - 3306:3306
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+            - PMA_HOST=mariadb
+        ports:
+            - 81:80
+
