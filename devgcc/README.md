@@ -31,10 +31,10 @@ $ docker run --rm -v "$(pwd)":/home/developer  devgcc:latest g++ *cpp
 $ docker run --rm -v "$(pwd)":/home/developer  devgcc:latest valgrind ./a.out
 ```
  
-For remote shell access (or remote compile from and IDE, e.g Netbeans), expose port 22 and use the predefined user credentials: developer/coding. **Note:** ``--security-opt seccomp:unconfined`` is needed for using gdb in container. Change ``/home/localdir`` with the folder you want to sharewith the container.
+For remote shell access (or remote compile from and IDE, e.g Netbeans), expose port 22 and use the predefined user credentials: developer/coding. **Note:** ``--security-opt seccomp:unconfined`` is needed for using gdb in container. Change ``/home/localdir`` with the folder you want to share with the container.
 
 ```sh
-$ docker run -p 127.0.0.1:2222:22 -d --security-opt seccomp:unconfined --rm -v "/home/localdir":/home/developer devgcc:latest
+$ docker run -p 127.0.0.1:2222:22 -it --security-opt seccomp:unconfined --rm -v "/home/localdir":/home/developer devgcc:latest
 $ ssh -P 2222 developer@localhost
 ``` 
 
