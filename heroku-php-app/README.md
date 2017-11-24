@@ -1,4 +1,4 @@
-#Sample PHP/apache docker image for Heroku
+# Sample PHP/apache docker image for Heroku
 
 ## Local use:
 
